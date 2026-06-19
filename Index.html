@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oftalmologia - Guia de Estudos (Retina, Olho Vermelho, Trauma, DMRI)</title>
+    <title>Oftalmologia - Guia de Estudos</title>
     <style>
         * {
             margin: 0;
@@ -12,23 +12,27 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f2f5;
+            background: #f4f8fc;
             color: #1e2a3a;
             padding: 20px;
+            caret-color: transparent;
         }
         .container {
             max-width: 1100px;
             margin: 0 auto;
             background: #ffffff;
             padding: 30px 35px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 12px rgba(40, 70, 110, 0.06);
             border-radius: 8px;
+        }
+        *:focus {
+            outline: none;
         }
         h1 {
             font-size: 2rem;
             font-weight: 600;
-            color: #0b1a2e;
-            border-bottom: 3px solid #1e4a7a;
+            color: #1a3a5e;
+            border-bottom: 3px solid #89b4d4;
             padding-bottom: 10px;
             margin-bottom: 25px;
             letter-spacing: -0.5px;
@@ -36,7 +40,7 @@
         h2 {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #1e4a7a;
+            color: #2a5a7a;
             margin: 25px 0 12px 0;
             padding-left: 6px;
         }
@@ -53,52 +57,59 @@
             color: #2c3e50;
             margin: 15px 0 6px 0;
         }
+
         .module {
             background: #ffffff;
-            border: 1px solid #dde4ec;
+            border: 1px solid #d6e3f0;
             border-radius: 6px;
             margin-bottom: 25px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
             overflow: hidden;
         }
         .module-header {
-            background: #1e3a5f;
+            background: #5b8db8;
             color: #ffffff;
             padding: 14px 22px;
             font-size: 1.2rem;
             font-weight: 600;
             letter-spacing: 0.3px;
-            border-bottom: 1px solid #132b47;
+            border-bottom: 1px solid #4a7aa3;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            user-select: none;
         }
         .module-header:hover {
-            background: #1a3455;
+            background: #4f7fa8;
         }
         .module-header .badge {
-            background: #4a7ba7;
+            background: #89b4d4;
             padding: 4px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 400;
             letter-spacing: 0.5px;
+            color: #fff;
         }
         .module-content {
             padding: 22px 25px;
-            background: #fafcfe;
+            background: #fafdff;
         }
         .sub-module {
-            background: #f5f8fc;
-            border-left: 4px solid #3b6e9e;
+            background: #f0f6fd;
+            border-left: 4px solid #89b4d4;
             padding: 15px 20px;
             margin: 18px 0;
             border-radius: 0 4px 4px 0;
         }
         .sub-module.dark {
-            border-left-color: #1e4a7a;
-            background: #eef3f9;
+            border-left-color: #5b8db8;
+            background: #e8f0f9;
+        }
+        .sub-module.emergency {
+            border-left-color: #b03a2e;
+            background: #fdf5f4;
         }
         .alert-box {
             background: #fdf2f2;
@@ -145,13 +156,6 @@
             border-radius: 3px;
             font-weight: 500;
         }
-        .inline-code {
-            font-family: 'Courier New', monospace;
-            background: #eef2f6;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.9rem;
-        }
         hr {
             margin: 25px 0;
             border: 0;
@@ -167,7 +171,6 @@
             .grid-2 { grid-template-columns: 1fr; }
             .module-header { font-size: 1rem; padding: 12px 16px; }
         }
-        /* details/summary reset */
         details summary {
             list-style: none;
             cursor: pointer;
@@ -175,17 +178,54 @@
         details summary::-webkit-details-marker {
             display: none;
         }
-        details summary .arrow {
-            font-size: 1.3rem;
-            transition: transform 0.2s;
+
+        .glossary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.95rem;
         }
-        details[open] summary .arrow {
-            transform: rotate(90deg);
+        .glossary-table th {
+            background: #dce6f0;
+            color: #1a2f44;
+            font-weight: 600;
+            padding: 8px 12px;
+            border: 1px solid #cbd6e3;
+            text-align: left;
+            width: 30%;
         }
-        .table-caption {
-            font-weight: 500;
-            margin-top: 12px;
-            color: #1e3a5f;
+        .glossary-table td {
+            padding: 8px 12px;
+            border: 1px solid #d8e0e9;
+            vertical-align: top;
+        }
+        .glossary-table tr:nth-child(even) td {
+            background: #f7fafd;
+        }
+        .glossary-table tr:nth-child(even) th {
+            background: #dce6f0;
+        }
+        @media (max-width: 600px) {
+            .glossary-table, .glossary-table tbody, .glossary-table tr, .glossary-table th, .glossary-table td {
+                display: block;
+                width: 100%;
+            }
+            .glossary-table tr {
+                margin-bottom: 12px;
+                border: 1px solid #d8e0e9;
+                border-radius: 4px;
+                overflow: hidden;
+            }
+            .glossary-table th {
+                background: #e8f0f9;
+                width: 100%;
+                font-weight: 600;
+                border-bottom: none;
+            }
+            .glossary-table td {
+                border-top: none;
+                padding-left: 16px;
+            }
         }
     </style>
 </head>
@@ -193,145 +233,114 @@
 <div class="container">
 
     <h1>Oftalmologia &bull; Guia de Estudos</h1>
-    <p style="color: #3d5a78; margin-bottom: 25px; font-size: 1.05rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">
+    <p style="color: #3d5a78; margin-bottom: 15px; font-size: 1.05rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">
         Baseado no material da Liga Acadêmica de Oftalmologia &bull; Prof. Jean Fogaça &bull; 18.05.2026
     </p>
 
     <!-- ========================================== -->
-    <!-- MÓDULO 0 – ANATOMIA E BASES -->
+    <!-- MÓDULO 1 – FUNDO DO OLHO (RETINA E VÍTREO) -->
     <!-- ========================================== -->
     <div class="module">
         <details open>
             <summary class="module-header">
-                <span>Módulo 0 – Anatomia do Vítreo e Retina (Base)</span>
-                <span class="badge">Fundamental</span>
+                <span>Módulo 1 – Fundo do olho (retina e vítreo)</span>
+                <span class="badge">Base / Comum / Urgência / Idosos</span>
             </summary>
             <div class="module-content">
-                <h3>Humor Vítreo</h3>
-                <ul class="list">
-                    <li><strong>Transparente</strong>, avascular, gelatinoso (hidrogel) – consistência similar à clara de ovo.</li>
-                    <li>Corresponde a <span class="highlight">2/3 do volume e peso</span> do olho.</li>
-                    <li><strong>Não se regenera</strong>.</li>
-                    <li><strong>Hialoide</strong>: condensação vítrea que o limita.</li>
-                    <li><strong>Aderido a</strong>: pars plana (corpo ciliar), retina periférica e papila.</li>
-                </ul>
 
-                <h3>Retina – Características Gerais</h3>
-                <ul class="list">
-                    <li>Porção <strong>sensorial</strong> do olho (células neurais).</li>
-                    <li>Tecido fino (0,1–0,5 mm), transparente.</li>
-                    <li>Cobre <span class="highlight">2/3 posteriores</span> do olho.</li>
-                    <li>1/3 anterior é "cego" (ora serrata).</li>
-                    <li><strong>Mácula</strong>: temporal e levemente inferior à papila; acúmulo de células ganglionares; <strong>avascular</strong> (mais escura); responsável pela <strong>visão central</strong>.</li>
-                    <li><strong>Fóvea</strong>: assoalho central da mácula; parte mais fina; <strong>sem células ganglionares</strong>; máxima acuidade visual.
-                        <ul>
-                            <li><strong>Umbo</strong>: ponto central da fovéola.</li>
-                            <li><strong>Fovéola</strong>: assoalho da fóvea.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Nutrição</strong>: artéria/veia central da retina (2/3 anteriores) e coroide/EPR (1/3 posterior – fotorreceptores).</li>
-                    <li><strong>Não tem inervação sensitiva</strong> – apenas informação visual.</li>
-                </ul>
-
-                <h3>As 10 Camadas da Retina</h3>
-                <div class="grid-2">
-                    <div>
-                        <ol class="list" style="padding-left:25px;">
-                            <li>Membrana limitante interna</li>
-                            <li>Camada de fibras nervosas</li>
-                            <li>Camada de células ganglionares</li>
-                            <li>Camada plexiforme interna</li>
-                            <li>Camada nuclear interna</li>
-                        </ol>
-                    </div>
-                    <div>
-                        <ol class="list" style="padding-left:25px;" start="6">
-                            <li>Camada plexiforme externa</li>
-                            <li>Camada nuclear externa</li>
-                            <li>Membrana limitante externa</li>
-                            <li>Camada dos fotorreceptores</li>
-                            <li>Epitélio pigmentar da retina (EPR)</li>
-                        </ol>
-                    </div>
-                </div>
-                <p style="margin-top:6px;"><strong>Membrana de Bruch</strong>: separa a retina da coroide.</p>
-            </div>
-        </details>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- MÓDULO 1 – DESCOLAMENTO DO VÍTREO POSTERIOR (DVP) -->
-    <!-- ========================================== -->
-    <div class="module">
-        <details>
-            <summary class="module-header">
-                <span>Módulo 1 – Descolamento do Vítreo Posterior (DVP)</span>
-                <span class="badge">Comum</span>
-            </summary>
-            <div class="module-content">
+                <!-- Sub 1A – Anatomia e Base -->
                 <div class="sub-module">
-                    <h4>1A – Epidemiologia, Fisiopatologia e Sinais</h4>
+                    <h4>1A – Anatomia e Fundamentos (Retina e Vítreo)</h4>
+                    <h3>Humor Vítreo</h3>
+                    <ul class="list">
+                        <li><strong>Transparente</strong>, avascular, gelatinoso (hidrogel) – consistência similar à clara de ovo.</li>
+                        <li>Corresponde a <span class="highlight">2/3 do volume e peso</span> do olho.</li>
+                        <li><strong>Não se regenera</strong>.</li>
+                        <li><strong>Hialoide</strong>: condensação vítrea que o limita.</li>
+                        <li><strong>Aderido a</strong>: pars plana (corpo ciliar), retina periférica e papila.</li>
+                    </ul>
+
+                    <h3>Retina – Características Gerais</h3>
+                    <ul class="list">
+                        <li>Porção <strong>sensorial</strong> do olho (formada principalmente por células neurais).</li>
+                        <li>Tecido fino (0,1–0,5 mm), transparente.</li>
+                        <li>Cobre <span class="highlight">2/3 posteriores</span> do olho.</li>
+                        <li>1/3 anterior é "cego" (ora serrata).</li>
+                        <li><strong>Mácula</strong>: temporal e levemente inferior à papila; acúmulo de células ganglionares; <strong>avascular</strong> (mais escura); responsável pela <strong>visão central</strong>.</li>
+                        <li><strong>Fóvea</strong>: assoalho central da mácula; parte mais fina; <strong>sem células ganglionares</strong>; máxima acuidade visual.
+                            <ul>
+                                <li><strong>Umbo</strong>: ponto central da fovéola.</li>
+                                <li><strong>Fovéola</strong>: assoalho da fóvea.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nutrição</strong>: artéria/veia central da retina (2/3 anteriores) e coroide/EPR (1/3 posterior – fotorreceptores).</li>
+                        <li><strong>Não tem inervação sensitiva</strong> – apenas informação visual.</li>
+                    </ul>
+
+                    <h3>As 10 Camadas da Retina</h3>
+                    <div class="grid-2">
+                        <div>
+                            <ol class="list" style="padding-left:25px;">
+                                <li>Membrana limitante interna</li>
+                                <li>Camada de fibras nervosas</li>
+                                <li>Camada de células ganglionares</li>
+                                <li>Camada plexiforme interna</li>
+                                <li>Camada nuclear interna</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <ol class="list" style="padding-left:25px;" start="6">
+                                <li>Camada plexiforme externa</li>
+                                <li>Camada nuclear externa</li>
+                                <li>Membrana limitante externa</li>
+                                <li>Camada dos fotorreceptores</li>
+                                <li>Epitélio pigmentar da retina (EPR)</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <p style="margin-top:6px;"><strong>Membrana de Bruch</strong>: separa a retina da coroide.</p>
+                </div>
+
+                <!-- Sub 1B – DVP -->
+                <div class="sub-module dark">
+                    <h4>1B – Descolamento do Vítreo Posterior (DVP) – Comum</h4>
                     <ul class="list">
                         <li><strong>Fisiopatologia</strong>: liquefação e contração do humor vítreo.</li>
                         <li><strong>Epidemiologia</strong>: muito comum, especialmente com o envelhecimento.</li>
                         <li><strong>Sinais e Sintomas</strong>: moscas volantes (em pouca quantidade).</li>
                         <li><strong>Risco</strong>: pode levar ao descolamento de retina por rotura.</li>
-                    </ul>
-                </div>
-                <div class="sub-module dark">
-                    <h4>1B – Tratamento, Prognóstico e Cuidados</h4>
-                    <ul class="list">
-                        <li><strong>Tratamento</strong>: na maioria dos casos, <strong>não é necessário</strong>.</li>
-                        <li><strong>Intervenção</strong>: laser YAG pode ser usado em opacidades grandes.</li>
+                        <li><strong>Diagnóstico</strong>: exame de fundo de olho com oftalmoscopia; USG se opacidade de meios.</li>
+                        <li><strong>Diagnóstico Diferencial</strong>: descolamento de retina (que cursa com escotoma e perda visual mais significativa).</li>
+                        <li><strong>Tratamento</strong>: na maioria dos casos, <strong>não é necessário</strong>. Laser YAG pode ser usado em opacidades grandes.</li>
                         <li><strong>Prognóstico</strong>: geralmente benigno, com resolução espontânea dos sintomas.</li>
                     </ul>
                 </div>
-            </div>
-        </details>
-    </div>
 
-    <!-- ========================================== -->
-    <!-- MÓDULO 2 – DESCOLAMENTO DE RETINA (DR) -->
-    <!-- ========================================== -->
-    <div class="module">
-        <details>
-            <summary class="module-header">
-                <span>Módulo 2 – Descolamento de Retina (DR)</span>
-                <span class="badge">Urgência</span>
-            </summary>
-            <div class="module-content">
-                <div class="sub-module">
-                    <h4>2A – Epidemiologia, Fisiopatologia, Sinais e Diagnóstico</h4>
+                <!-- Sub 1C – DR -->
+                <div class="sub-module emergency">
+                    <h4>1C – Descolamento de Retina (DR) – Urgência</h4>
                     <ul class="list">
                         <li><strong>Definição</strong>: separação anormal entre retina neurosensorial e EPR/coroide. Fotorreceptores perdem suprimento sanguíneo → isquemia.</li>
                         <li><strong>Fatores de Risco</strong>: miopia (axial), cirurgia oftalmológica (catarata), trauma (bungee jumping).</li>
                         <li><strong>Tipos (3 mecanismos)</strong>:
                             <ul>
-                                <li><strong>Regmatogênico</strong> (mais comum): rotura da retina → infiltração de líquido subretiniano.</li>
-                                <li><strong>Tracional</strong>: tração anteroposterior (vítrea) → descolamento.</li>
-                                <li><strong>Exsudativo</strong>: exsudação ou sangue subretiniano (disfunção EPR/coroide, tumor, uveíte posterior).</li>
+                                <li><strong>Regmatogênico</strong> (mais comum): rotura da retina → infiltração de líquido subrretiniano.</li>
+                                <li><strong>Tracional</strong>: tração anteroposterior (mais comumente vítrea) → descolamento.</li>
+                                <li><strong>Exsudativo</strong>: menos comum, exsudação ou sangue subrretiniano (disfunção EPR/coroide, tumor, uveíte posterior).</li>
                             </ul>
                         </li>
                         <li><strong>Sintomas</strong>: escotoma (perda de campo visual), moscas volantes (floaters/miodesopsia), flashes (fotopsia).</li>
-                        <li><strong>Diagnóstico</strong>: visualização do DR; ultrassonografia (USG) quando há opacidade de meios.</li>
-                    </ul>
-                    <h4>Diagnóstico Diferencial</h4>
-                    <ul class="list">
-                        <li>Descolamento do vítreo posterior (sem rotura retiniana).</li>
-                        <li>Retinosquise (separação das camadas retinianas sem rotura).</li>
-                        <li>Neovascularização coroideana (exsudação).</li>
-                    </ul>
-                </div>
-
-                <div class="sub-module dark">
-                    <h4>2B – Tratamento, Prognóstico e Cuidados</h4>
-                    <ul class="list">
+                        <li><strong>Diagnóstico</strong>: 
+                            <ul>
+                                <li><strong>Exame físico</strong>: fundoscopia direta ou indireta para visualizar a retina descolada.</li>
+                                <li><strong>Exames de imagem</strong>: ultrassonografia (USG) quando há opacidade de meios (catarata, hemorragia vítrea).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Diagnóstico Diferencial</strong>: DVP (sem escotoma e sem retina visivelmente descolada), retinosquise (separação de camadas sem rotura), neovascularização coroideana (exsudação sem rotura).</li>
                         <li><strong>Prognóstico</strong>: depende do tempo até o tratamento e do envolvimento macular.</li>
                     </ul>
                     <table>
-                        <thead>
-                            <tr><th>Quadro Clínico</th><th>Tratamento</th></tr>
-                        </thead>
+                        <thead><tr><th>Quadro Clínico</th><th>Tratamento</th></tr></thead>
                         <tbody>
                             <tr><td>Rotura sem DR (ou DR pequeno/periférico)</td><td><strong>Laser</strong> (fotocoagulação)</td></tr>
                             <tr><td>DR anterior ao equador</td><td><strong>Scleral buckle</strong> (cinta de silicone)</td></tr>
@@ -339,32 +348,24 @@
                             <tr><td>DR grande, complicado ou com mácula off</td><td><strong>Vitrectomia</strong></td></tr>
                         </tbody>
                     </table>
-                    <ul class="list">
-                        <li><strong>Cuidados</strong>: acompanhamento oftalmológico rigoroso pós-operatório; orientação sobre posicionamento (quando indicado).</li>
-                    </ul>
                 </div>
-            </div>
-        </details>
-    </div>
 
-    <!-- ========================================== -->
-    <!-- MÓDULO 3 – DMRI (DEGENERAÇÃO MACULAR) -->
-    <!-- ========================================== -->
-    <div class="module">
-        <details>
-            <summary class="module-header">
-                <span>Módulo 3 – Degeneração Macular Relacionada à Idade (DMRI)</span>
-                <span class="badge">Idosos</span>
-            </summary>
-            <div class="module-content">
-                <div class="sub-module">
-                    <h4>3A – Epidemiologia, Fisiopatologia, Sinais e Diagnóstico</h4>
+                <!-- Sub 1D – DMRI -->
+                <div class="sub-module dark">
+                    <h4>1D – Degeneração Macular Relacionada à Idade (DMRI) – Idosos</h4>
                     <ul class="list">
                         <li><strong>Epidemiologia</strong>: principal causa de cegueira em idosos em países desenvolvidos.</li>
                         <li><strong>Fisiopatologia</strong>: drusas (depósitos extracelulares na membrana de Bruch). Pequenas drusas são normais >50 anos.</li>
-                        <li><strong>Fatores de Risco</strong>: idade (exponencial após 65 anos – principal), tabagismo, doenças cardiovasculares, sexo feminino, história familiar, íris clara.</li>
+                        <li><strong>Fatores de Risco</strong>: idade (aumento exponencial após 65 anos – principal), tabagismo, doenças cardiovasculares, sexo feminino, história familiar, íris clara.</li>
                         <li><strong>Sintomas</strong>: baixa acuidade visual central (BAV), metamorfopsia.</li>
-                        <li><strong>Sinais</strong>: drusas (especialmente coalescentes), atrofia geográfica, fluido ou sangue subretiniano.</li>
+                        <li><strong>Sinais</strong>: drusas (especialmente coalescentes), atrofia geográfica, fluido ou sangue subrretiniano.</li>
+                        <li><strong>Diagnóstico</strong>: 
+                            <ul>
+                                <li><strong>Exame físico</strong>: fundoscopia para visualização de drusas e alterações maculares.</li>
+                                <li><strong>Exames de imagem</strong>: tomografia de coerência óptica (OCT) para avaliar espessura macular e presença de líquido; angiografia fluoresceínica para identificar neovascularização.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Diagnóstico Diferencial</strong>: retinopatia diabética (exsudatos e microaneurismas difusos), oclusão venosa retiniana (hemorragias em chama de vela), degeneração macular miópica (associada a alto grau de miopia).</li>
                     </ul>
                     <h4>Classificação</h4>
                     <ul class="list">
@@ -372,17 +373,12 @@
                         <li><strong>Exsudativa (úmida / neovascular)</strong></li>
                         <li><strong>Atrofia geográfica</strong></li>
                     </ul>
-                </div>
-
-                <div class="sub-module dark">
-                    <h4>3B – Tratamento, Prognóstico e Cuidados</h4>
+                    <h4>Tratamento – Forma Seca</h4>
                     <ul class="list">
-                        <li><strong>Tratamento – Forma Seca</strong>: modificar fatores de risco; suplemento vitamínico antioxidante (fórmula AREDS-2).</li>
+                        <li>Modificar fatores de risco; suplemento vitamínico antioxidante (fórmula AREDS-2).</li>
                     </ul>
                     <table>
-                        <thead>
-                            <tr><th colspan="2">Fórmula AREDS-2</th></tr>
-                        </thead>
+                        <thead><tr><th colspan="2">Fórmula AREDS-2</th></tr></thead>
                         <tbody>
                             <tr><td>Vitamina C</td><td>500 mg</td></tr>
                             <tr><td>Vitamina E</td><td>400 UI</td></tr>
@@ -394,8 +390,7 @@
                     </table>
                     <ul class="list">
                         <li><strong>Tratamento – Forma Úmida</strong>: anti-VEGF (terapia intravítrea).</li>
-                        <li><strong>Prognóstico</strong>: a forma seca pode evoluir para a forma úmida; o tratamento precoce é essencial para preservar a visão central.</li>
-                        <li><strong>Cuidados</strong>: acompanhamento com grade de Amsler; orientação nutricional.</li>
+                        <li><strong>Prognóstico</strong>: a forma seca pode evoluir para a forma úmida; o tratamento precoce é essencial.</li>
                     </ul>
                 </div>
             </div>
@@ -403,196 +398,191 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- MÓDULO 4 – OLHO VERMELHO (GERAL E CONJUNTIVITES) -->
+    <!-- MÓDULO 2 – OLHO VERMELHO (ABORDAGEM INICIAL) -->
     <!-- ========================================== -->
     <div class="module">
         <details>
             <summary class="module-header">
-                <span>Módulo 4 – Olho Vermelho: Abordagem Geral e Conjuntivites</span>
-                <span class="badge">Diferenciais</span>
+                <span>Módulo 2 – Olho vermelho – abordagem inicial</span>
+                <span class="badge">Diferenciais / Urgência / Emergência</span>
             </summary>
             <div class="module-content">
-                <div class="sub-module">
-                    <h4>4A – Sinais de Alerta, Epidemiologia e Fisiopatologia</h4>
+
+                <!-- Sub 2A – Sinais de Alerta -->
+                <div class="sub-module emergency">
+                    <h4>2A – Sinais de Alerta e Fundamentos</h4>
                     <div class="alert-box">
                         <strong>SINAIS DE ALERTA (qualquer um → encaminhar com urgência):</strong><br>
                         Redução da visão &bull; Dor intensa &bull; Reflexo pupilar ausente &bull; Hiperemia perilimbar &bull; Hipópio &bull; Hifema
                     </div>
                     <ul class="list">
-                        <li><strong>Olho vermelho</strong>: é um sinal, não uma doença. Causas: pálpebra/anexos, conjuntiva, córnea, intraocular.</li>
+                        <li><strong>Olho vermelho</strong>: não é uma doença, mas um sinal. Causas possíveis: pálpebra/anexos, conjuntiva, córnea, intraocular.</li>
+                        <li><strong>Conceitos fundamentais</strong>: A retina não possui inervação sensitiva (lesões retinianas não doem). A córnea é a parte do corpo mais inervada por mm².</li>
                     </ul>
+                </div>
+
+                <!-- Sub 2B – Conjuntivites -->
+                <div class="sub-module">
+                    <h4>2B – Conjuntivites – Diferenciais</h4>
+                    
                     <h4>Conjuntivite Viral</h4>
                     <ul class="list">
                         <li><strong>Epidemiologia</strong>: a mais comum. Associada a IVAS, linfonodopatia pré-auricular.</li>
-                        <li><strong>Sinais/Sintomas</strong>: edema palpebral, secreção aquosa/mucoide, folículos, membranas (gravidade).</li>
-                        <li><strong>Duração</strong>: 1 a 4 semanas.</li>
+                        <li><strong>Sinais/Sintomas</strong>: edema palpebral, secreção aquosa/mucoide, folículos, membranas (indicam gravidade).</li>
+                        <li><strong>Duração</strong>: 1 a 4 semanas. Resolução em 7–14 dias.</li>
+                        <li><strong>Diagnóstico</strong>: clínico, com exame à lâmpada de fenda; cultura viral raramente necessária.</li>
+                        <li><strong>Diagnóstico Diferencial</strong>: conjuntivite bacteriana (secreção purulenta), alérgica (prurido intenso).</li>
+                        <li><strong>Tratamento</strong>: higiene, compressa fria, colírios lubrificantes. <strong>Cuidados de contágio</strong>.</li>
                     </ul>
+
                     <h4>Conjuntivite Alérgica</h4>
                     <ul class="list">
-                        <li>Bilateral, NÃO contagiosa. Prurido intenso, secreção aquosa, papilas.</li>
+                        <li>Bilateral, <strong>NÃO contagiosa</strong>. Prurido intenso, secreção aquosa, papilas.</li>
+                        <li><strong>Diagnóstico</strong>: clínico, geralmente sazonal ou associado a alérgenos.</li>
+                        <li><strong>Tratamento</strong>: colírios lubrificantes e antialérgicos; corticoide (evitar se possível).</li>
                     </ul>
+
                     <h4>Conjuntivite Bacteriana</h4>
                     <ul class="list">
-                        <li>Muita secreção purulenta, sem adenopatia/febre. Etiologia: <em>S. aureus</em> e <em>S. pneumoniae</em> (adultos); <em>Haemophilus</em> spp. e <em>M. catarrhalis</em> (crianças).</li>
+                        <li>Muita secreção purulenta, sem adenopatia/febre.</li>
+                        <li>Etiologia: <em>S. aureus</em> e <em>S. pneumoniae</em> (adultos); <em>Haemophilus</em> spp. e <em>M. catarrhalis</em> (crianças).</li>
+                        <li><strong>Diagnóstico</strong>: clínico; cultura e antibiograma em casos graves ou refratários.</li>
+                        <li><strong>Tratamento</strong>: colírio antibiótico (fluoroquinolonas) + lubrificante. Encaminhar se hiperaguda, crônica ou má resposta.</li>
                     </ul>
+
+                    <h4>Conjuntivite Neonatal</h4>
+                    <ul class="list"><li>Geralmente por <em>Chlamydia</em> ou <em>Neisseria gonorrhoeae</em>, exige profilaxia e tratamento específico (tópico no material).</li></ul>
                 </div>
 
+                <!-- Sub 2C – Outras Causas -->
                 <div class="sub-module dark">
-                    <h4>4B – Tratamento, Prognóstico e Cuidados</h4>
-                    <ul class="list">
-                        <li><strong>Viral</strong>: não há tratamento específico. Resolução em 7–14 dias. Higiene, compressa fria, lubrificantes. <strong>Cuidados de contágio</strong>.</li>
-                        <li><strong>Alérgica</strong>: lubrificantes e antialérgicos; corticoide (evitar se possível).</li>
-                        <li><strong>Bacteriana</strong>: colírio antibiótico (fluoroquinolonas) + lubrificante. Encaminhar se hiperaguda, crônica ou má resposta.</li>
-                        <li><strong>Conjuntivite Neonatal</strong>: tópico mencionado (geralmente por <em>Chlamydia</em> ou <em>Neisseria</em>, exige profilaxia e tratamento específico).</li>
-                    </ul>
-                    <h4>Diagnóstico Diferencial (entre as conjuntivites)</h4>
-                    <ul class="list">
-                        <li>Viral: linfonodo, secreção aquosa.</li>
-                        <li>Bacteriana: purulenta, sem linfonodo.</li>
-                        <li>Alérgica: prurido intenso, bilateral, sazonal.</li>
-                    </ul>
-                </div>
-            </div>
-        </details>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- MÓDULO 5 – OUTRAS CAUSAS DE OLHO VERMELHO -->
-    <!-- ========================================== -->
-    <div class="module">
-        <details>
-            <summary class="module-header">
-                <span>Módulo 5 – Outras Causas de Olho Vermelho (Ceratite, Uveíte, Glaucoma)</span>
-                <span class="badge">Emergências</span>
-            </summary>
-            <div class="module-content">
-                <div class="sub-module">
-                    <h4>5A – Epidemiologia, Fisiopatologia, Sinais e Diagnóstico Diferencial</h4>
+                    <h4>2C – Outras Causas de Olho Vermelho (Urgência / Emergência)</h4>
                     
                     <h4>Sangramento Subconjuntival (Hiposfagma)</h4>
-                    <ul class="list"><li>Benigno. Causas: Valsalva, trauma/coceira, pico hipertensivo. Assintomático. Tratamento: não necessário.</li></ul>
+                    <ul class="list">
+                        <li>Benigno. Causas: manobra de Valsalva, trauma/coceira, pico hipertensivo (HAS). Assintomático.</li>
+                        <li><strong>Diagnóstico</strong>: exame físico com oftalmoscopia.</li>
+                        <li>Tratamento: não é necessário.</li>
+                    </ul>
 
                     <h4>Olho Seco</h4>
-                    <ul class="list"><li>Benigno, subdiagnosticado. Hiperemia interpalpebral, turvação, prurido. Tratamento: reduzir eletrônicos, lubrificantes.</li></ul>
+                    <ul class="list">
+                        <li>Geralmente benigno, subdiagnosticado. Hiperemia interpalpebral, turvação visual, prurido.</li>
+                        <li><strong>Diagnóstico</strong>: teste de Schirmer, tempo de ruptura do filme lacrimal (TBUT).</li>
+                        <li>Tratamento: reduzir uso de eletrônicos, colírios lubrificantes.</li>
+                    </ul>
 
                     <h4>Corpo Estranho</h4>
-                    <ul class="list"><li>Conjuntival, corneano, escleral, intraocular. Curativo: pomada ATB + cicloplégico + olho fechado (24h).</li></ul>
+                    <ul class="list">
+                        <li>Conjuntival, corneano, escleral, intraocular.</li>
+                        <li><strong>Diagnóstico</strong>: exame com lâmpada de fenda; fluoresceína para evidenciar lesões epiteliais.</li>
+                        <li>Curativo: pomada ATB + colírio cicloplégico + olho fechado (máximo 24h).</li>
+                    </ul>
 
                     <h4>Ceratite</h4>
-                    <ul class="list"><li>Inflamação/infecção corneana. Risco de perda visual. Associada a lentes de contato. <strong>Sinais</strong>: dor + ↓visão, injeção ciliar, fotofobia. <strong>Tratamento</strong>: encaminhar ao oftalmo, ATB.</li></ul>
+                    <ul class="list">
+                        <li>Inflamação/infecção corneana (viral ou bacteriana). <strong>Risco de perda visual</strong>. Associada a lentes de contato (LCS).</li>
+                        <li><strong>Sinais</strong>: dor + ↓visão, injeção ciliar, fotofobia.</li>
+                        <li><strong>Diagnóstico</strong>: lâmpada de fenda com fluoresceína (visualiza lesão epitelial com brilho verde) e luz azul; cultura corneana em casos graves.</li>
+                        <li><strong>Diagnóstico Diferencial</strong>: abrasão corneana (sem infiltrado inflamatório), uveíte (sem lesão epitelial).</li>
+                        <li><strong style="color:#b03a2e;">Atenção: Contraindicado o uso de colírio corticoesteroide sem oftalmologista.</strong></li>
+                        <li><strong>Tratamento</strong>: encaminhar ao oftalmo, colírio ATB.</li>
+                    </ul>
 
                     <h4>Uveíte Anterior (Iridociclite)</h4>
                     <ul class="list">
-                        <li><strong>Sinais</strong>: dor + ↓visão, unilateral, injeção ciliar, miose, fotofobia, hipópio, PIO normal/baixa.</li>
-                        <li><strong>Doenças sistêmicas associadas</strong>: espondiloartropatias (HLA-B27), artrite idiopática juvenil (assintomática), sarcoidose (granulomatosa), síndrome de Behçet (úlceras + uveíte com hipópio).</li>
+                        <li>Inflamação uveal (íris + corpo ciliar + coroide).</li>
+                        <li><strong>Sinais</strong>: dor + ↓visão, unilateral, injeção ciliar, miose, fotofobia, pode ter hipópio, PIO normal ou baixa.</li>
+                        <li><strong>Diagnóstico</strong>: lâmpada de fenda com células e flare na câmara anterior; exames laboratoriais para doenças sistêmicas (HLA-B27, VDRL, FAN, etc.) se necessário.</li>
+                        <li><strong>Doenças sistêmicas associadas</strong>: espondiloartropatias soronegativas (espondilite anquilosante, HLA-B27), artrite idiopática juvenil (assintomática), sarcoidose (granulomatosa), síndrome de Behçet (úlceras + uveíte com hipópio).</li>
+                        <li><strong>Diagnóstico Diferencial</strong>: glaucoma agudo (PIO elevada, midríase), ceratite (lesão corneana).</li>
                     </ul>
 
                     <h4>Glaucoma Agudo</h4>
-                    <ul class="list"><li><strong>Emergência</strong>: cegueira irreversível. Dor intensa + ↓visão (horas/dias), ↑PIO (olho duro), midríase média.</li></ul>
-                </div>
-
-                <div class="sub-module dark">
-                    <h4>5B – Tratamento, Prognóstico e Cuidados</h4>
                     <ul class="list">
-                        <li><strong>Ceratite</strong>: encaminhamento urgente; ATB tópico ou sistêmico conforme etiologia.</li>
-                        <li><strong>Uveíte</strong>: tratar a causa sistêmica; cicloplégicos e corticoide tópico (sob supervisão).</li>
-                        <li><strong>Glaucoma Agudo</strong>: redução da PIO (manitol, acetazolamida, colírios hipotensores); iridotomia a laser.</li>
+                        <li><strong>Emergência!!! Cegueira irreversível.</strong> Dor intensa + ↓visão (horas/dias), ↑PIO (olho duro), midríase média.</li>
+                        <li><strong>Diagnóstico</strong>: tonometria (PIO elevada), gonioscopia para avaliar ângulo fechado.</li>
+                        <li><strong>Diagnóstico Diferencial</strong>: uveíte anterior (PIO normal/baixa, miose), ceratite (lesão corneana).</li>
                     </ul>
-                    <h4>Tabela Diferencial – Olho Vermelho</h4>
-                    <table>
-                        <thead><tr><th>Condição</th><th>↓Visão</th><th>Hiperemia</th><th>Dor</th><th>Secreção</th><th>Prurido</th><th>Edema Palp.</th><th>Fotofobia</th><th>Encaminhar?</th></tr></thead>
-                        <tbody>
-                            <tr><td>Olho Seco</td><td>±</td><td>Interpalpebral</td><td>-</td><td>+</td><td>+</td><td>-</td><td>±</td><td>Não</td></tr>
-                            <tr><td>Corpo Estranho</td><td>±</td><td>Localizada</td><td>±</td><td>±</td><td>-</td><td>±</td><td>±</td><td>±</td></tr>
-                            <tr><td>Conj. Viral</td><td>±</td><td>Difusa</td><td>-</td><td>+++</td><td>+</td><td>++</td><td>-</td><td>Não</td></tr>
-                            <tr><td>Conj. Bacteriana</td><td>+</td><td>Difusa</td><td>-</td><td>++++</td><td>+</td><td>++</td><td>±</td><td>Se grave</td></tr>
-                            <tr><td>Ceratite</td><td>++</td><td>Perilimbar</td><td>+++</td><td>±</td><td>±</td><td>±</td><td>+++</td><td><strong>SIM</strong></td></tr>
-                            <tr><td>Uveíte Ant.</td><td>++</td><td>Perilimbar</td><td>+++</td><td>-</td><td>-</td><td>-</td><td>+++</td><td><strong>SIM</strong></td></tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </details>
     </div>
 
     <!-- ========================================== -->
-    <!-- MÓDULO 6 – TRAUMA OCULAR -->
+    <!-- MÓDULO 3 – TRAUMA OCULAR -->
     <!-- ========================================== -->
     <div class="module">
         <details>
             <summary class="module-header">
-                <span>Módulo 6 – Trauma Ocular</span>
-                <span class="badge">Urgência</span>
+                <span>Módulo 3 – Trauma ocular</span>
+                <span class="badge">Urgência / Emergência</span>
             </summary>
             <div class="module-content">
+
                 <div class="sub-module">
-                    <h4>6A – Avaliação Inicial, Sinais e Diagnóstico</h4>
-                    <div class="alert-box">
-                        <strong>SINAIS DE ALERTA (encaminhar com urgência):</strong><br>
-                        Redução da visão &bull; Dor intensa &bull; Reflexo pupilar ausente &bull; Hiperemia perilimbar &bull; Hipópio &bull; Hifema
-                    </div>
+                    <h4>3A – Abordagem Inicial e Exames (Fundamental)</h4>
                     <ul class="list">
-                        <li><strong>Abordagem inicial</strong> pode ser feita pelo clínico, mas <strong>sempre encaminhar</strong> ao oftalmologista (lesões intraoculares podem passar despercebidas).</li>
                         <li><strong>Avaliação da Visão</strong>: Snellen → cartaz/app → contar dedos → movimentos de mão → percepção de luz.</li>
-                        <li><strong>Exame Físico (de fora para dentro)</strong>: pálpebra, motilidade, integridade, posição, hemorragia, córnea, hifema, pupila.
+                        <li><strong>Exame Físico ("de fora para dentro")</strong>: Pálpebra, motilidade, integridade, posição, hemorragia, córnea, hifema, pupila.
                             <ul>
                                 <li><strong>Proptose</strong>: sugere hematoma retrobulbar.</li>
-                                <li><strong>Enoftalmo</strong>: sugere ruptura do globo ou fratura orbitária.</li>
+                                <li><strong>Enoftalmo</strong>: sugere ruptura do globo ou fratura da órbita.</li>
                             </ul>
                         </li>
-                        <li><strong>Teste de Seidel</strong>: instilar fluoresceína + luz azul → observar área de diluição (vazamento de humor aquoso).</li>
-                        <li><strong>Exames complementares</strong>: TC e USG (indicados para CE, descolamento, hemorragia). <strong>Evitar</strong> se suspeita de ruptura do globo.</li>
-                    </ul>
-                    <h4>Laceração Palpebral</h4>
-                    <ul class="list">
-                        <li>Superficiais ≤ 1/4 da extensão: não suturam, apenas pomada ATB.</li>
-                        <li>Maioria: sutura com cuidado com alinhamento da margem.</li>
-                        <li>Mediais: possível lesão da via lacrimal superior → encaminhar.</li>
-                    </ul>
-                    <h4>Abrasão Corneana</h4>
-                    <ul class="list">
-                        <li>Visualizada com fluoresceína (brilho verde). Recuperação rápida (<24h).</li>
-                        <li>Abrasões lineares verticais → sugerem CE na conjuntiva tarsal superior (everter a pálpebra).</li>
-                        <li>Materiais contaminados → alto risco de ceratite bacteriana.</li>
+                        <li><strong>Teste de Seidel</strong>: 1. Pingar fluoresceína; 2. Luz azul; 3. Observar área de diluição (vazamento de humor aquoso) → confirma perfuração ocular.</li>
+                        <li><strong>Exames complementares</strong>: 
+                            <ul>
+                                <li><strong>TC</strong>: indicada para corpo estranho intraocular, fratura orbitária, hemorragia retrobulbar. <strong>Evitar se suspeita de ruptura do globo</strong> (risco de extrusão).</li>
+                                <li><strong>USG</strong>: útil para avaliar descolamento de retina, hemorragia vítrea, quando há opacidade de meios. <strong>Evitar se suspeita de ruptura do globo</strong>.</li>
+                                <li><strong>RNM</strong>: em casos específicos (ex.: corpo estranho não metálico).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Regra de ouro</strong>: O manejo inicial pode ser feito pelo clínico, mas <strong>sempre encaminhar</strong> ao oftalmologista (lesões intraoculares podem passar despercebidas).</li>
+                        <li><strong>Proibição absoluta</strong>: <strong>NUNCA liberar paciente com colírio anestésico</strong> (uso exclusivo do médico).</li>
                     </ul>
                 </div>
 
                 <div class="sub-module dark">
-                    <h4>6B – Tratamento e Condutas Específicas</h4>
+                    <h4>3B – Lesões Específicas (Urgência)</h4>
                     <ul class="list">
-                        <li><strong>Abrasão Corneana</strong>: lubrificação agressiva, acompanhamento, ATB profilático em traumas "sujos".</li>
-                        <li><strong>Corpo Estranho e Laceração Corneana</strong>:
+                        <li><strong>Laceração Palpebral</strong>: Superficiais ≤1/4 da extensão → apenas pomada ATB. Cuidado com alinhamento da margem. Mediais → possível lesão da via lacrimal superior → encaminhar.</li>
+                        <li><strong>Abrasão Corneana</strong>: 
                             <ul>
-                                <li>Vegetal → maior risco fúngico.</li>
-                                <li>Alto impacto → risco de CE intraocular/orbitário.</li>
-                                <li>Everter pálpebras (após excluir perfuração).</li>
-                                <li>Suspeitar de perfuração: pupila irregular, mecanismo de alto impacto, Seidel positivo.</li>
+                                <li><strong>Diagnóstico</strong>: fluoresceína + luz azul (brilho verde intenso).</li>
+                                <li>Recuperação rápida (<24h). Abrasões lineares verticais → suspeitar de CE na conjuntiva tarsal superior (everter). Traumas "sujos" → ATB profilático.</li>
                             </ul>
                         </li>
-                        <li><strong>Remoção de Corpo Estranho (pelo clínico)</strong>:
-                            <ol class="list">
-                                <li>Ambiente iluminado + anestésico tópico.</li>
-                                <li>Localizar: conjuntiva (cotonete) ou córnea (agulha 25G/lâmina 15).</li>
-                                <li>ATB tópico por 5 dias.</li>
-                            </ol>
+                        <li><strong>Corpo Estranho / Laceração Corneana</strong>: 
+                            <ul>
+                                <li>Vegetal (maior risco fúngico). Alto impacto (maior risco intraocular).</li>
+                                <li>Everter pálpebras (após excluir perfuração).</li>
+                                <li>Remoção pelo clínico: cotonete umedecido (conjuntiva) ou agulha 25G/lâmina 15 (córnea) + ATB tópico por 5 dias.</li>
+                                <li><strong>Diagnóstico Diferencial</strong>: perfuração ocular (teste de Seidel positivo, pupila irregular).</li>
+                            </ul>
                         </li>
-                        <li><strong>⚠️ NUNCA liberar paciente com anestésico tópico. Uso exclusivo do médico.</strong></li>
                     </ul>
+                </div>
 
-                    <h4>Queimadura por Radiação (Fotoceratite)</h4>
+                <div class="sub-module emergency">
+                    <h4>3C – Queimaduras (Emergência)</h4>
+                    
+                    <h4>Radiação (Fotoceratite)</h4>
                     <ul class="list">
-                        <li>Sintomas: dor intensa, CE, hiperemia, fotofobia (bilateral). Latência: 6–12h. Autolimitada.</li>
+                        <li>Dor intensa, CE, hiperemia, fotofobia (bilateral). Latência: 6–12h. Autolimitada.</li>
+                        <li><strong>Diagnóstico</strong>: história de exposição UV; fluoresceína → ceratopatia punctata.</li>
                         <li>Tratamento: suporte, compressas frias, óculos escuros, evitar UV.</li>
                     </ul>
 
                     <h4>Queimadura Química – Protocolo de Emergência</h4>
                     <ul class="list">
-                        <li><strong>Álcalis</strong>: mais graves (necrose liquefativa). <strong>Ácidos</strong>: menos graves (necrose de coagulação).</li>
-                        <li><strong>Passo 1 (mais importante)</strong>: irrigação no local do acidente (água filtrada).</li>
-                        <li><strong>Passo 2</strong>: irrigação com soro/Ringer (baixa pressão, alto volume) por ≥30 min.</li>
-                        <li><strong>Passo 3</strong>: anestesia tópica (proparacaína) se disponível.</li>
-                        <li><strong>Passo 4</strong>: aferir pH no fundo de saco inferior (fita de urina). Se neutro → parar e reconferir após 30 min. Se alterado → manter por +30 min.</li>
-                        <li><strong>Passo 5</strong>: avaliação oftalmológica emergencial é <strong>mandatória</strong> (exceto casos muito leves).</li>
+                        <li><strong>Álcalis (bases, ex: bomba de cal)</strong>: mais graves (necrose liquefativa, saponificação). <strong>Ácidos</strong>: menos graves (necrose de coagulação, barreira autolimitada).</li>
+                        <li><strong>Diagnóstico</strong>: avaliação do pH com fita de urina após lavagem.</li>
+                        <li><strong>Passo 1 (MAIS IMPORTANTE)</strong>: Irrigação no local do acidente (água filtrada).</li>
+                        <li><strong>Passo 2</strong>: Chegando ao atendimento, irrigação com soro/Ringer (baixa pressão, alto volume) por ≥30 min.</li>
+                        <li><strong>Passo 3</strong>: Anestesia tópica (proparacaína/proximetacaína 0,5%) se disponível.</li>
+                        <li><strong>Passo 4</strong>: Aferir pH no fundo de saco inferior (fita de urina). Se neutro → parar e reconferir após 30 min. Se alterado → manter por +30 min.</li>
+                        <li><strong>Passo 5</strong>: Avaliação oftalmológica emergencial é <strong>mandatória</strong> (exceto casos muito leves).</li>
                     </ul>
                 </div>
             </div>
@@ -600,41 +590,133 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- MÓDULO 7 – RETINOPATIA DIABÉTICA (RD) -->
+    <!-- MÓDULO 4 – RETINOPATIA DIABÉTICA -->
     <!-- ========================================== -->
     <div class="module">
         <details>
             <summary class="module-header">
-                <span>Módulo 7 – Retinopatia Diabética (RD)</span>
+                <span>Módulo 4 – Retinopatia diabética</span>
                 <span class="badge">Microvascular</span>
             </summary>
             <div class="module-content">
+
                 <div class="sub-module">
-                    <h4>7A – Epidemiologia, Fisiopatologia, Fatores de Risco e Diagnóstico</h4>
+                    <h4>4A – Epidemiologia, Fisiopatologia e Fatores de Risco (Microvascular)</h4>
                     <ul class="list">
-                        <li><strong>Epidemiologia</strong>: 3ª causa de cegueira no Brasil. Principal complicação microvascular do DM.</li>
-                        <li><strong>Dados</strong> (WESDR): após 20 anos de DM → 99% (DM1) e 60% (DM2) têm algum grau de retinopatia.</li>
-                        <li><strong>Fisiopatologia</strong>: dano microvascular em órgão-alvo. Inicialmente assintomática.</li>
-                        <li><strong>Sintomas</strong>: BAV, metamorfopsia, moscas volantes (floaters).</li>
-                        <li><strong>Fatores de Risco</strong>: duração do DM (principal), tipo DM1, HbA1c elevada, HAS, dislipidemia, etnia negra, gravidez, tabagismo.</li>
-                        <li><strong>Achados Fundoscópicos</strong>: exsudato duro, hemorragia, microaneurisma.</li>
-                    </ul>
-                    <h4>Diagnóstico Diferencial</h4>
-                    <ul class="list">
-                        <li>Retinopatia hipertensiva.</li>
-                        <li>Oclusão venosa/arterial retiniana.</li>
-                        <li>DMRI (em idosos).</li>
+                        <li><strong>Epidemiologia</strong>: Uma das maiores causas não-infecciosas de morbimortalidade. Afeta ~7% da população no Brasil. Diabéticos têm 20x mais chance de cegueira. É a 3ª causa de cegueira no Brasil.</li>
+                        <li><strong>Fisiopatologia</strong>: Principal complicação microvascular do DM, representando dano de órgão-alvo. DM1 (autoimune) vs DM2 (genético + estilo de vida).</li>
+                        <li><strong>Dados (WESDR)</strong>: Após 20 anos de DM → 99% (DM1) e 60% (DM2) têm algum grau de retinopatia.</li>
+                        <li><strong>Fatores de Risco</strong>: Duração da doença (principal), tipo DM1, HbA1c elevada, HAS, dislipidemia, etnia negra, gravidez, tabagismo.</li>
                     </ul>
                 </div>
 
                 <div class="sub-module dark">
-                    <h4>7B – Tratamento, Prognóstico e Cuidados</h4>
+                    <h4>4B – Diagnóstico, Tratamento e Cuidados (Microvascular)</h4>
                     <ul class="list">
+                        <li><strong>Sintomas</strong>: inicialmente assintomática; pode gerar BAV, metamorfopsia, moscas volantes (floaters).</li>
+                        <li><strong>Diagnóstico</strong>:
+                            <ul>
+                                <li><strong>Exame físico</strong>: fundoscopia para visualizar microaneurismas, hemorragias, exsudatos duros, edema macular.</li>
+                                <li><strong>Exames laboratoriais</strong>: glicemia de jejum, HbA1c, perfil lipídico, função renal (microalbuminúria).</li>
+                                <li><strong>Exames de imagem</strong>: angiografia fluoresceínica (para identificar áreas de isquemia e neovascularização); OCT (para quantificar edema macular).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Diagnóstico Diferencial</strong>: retinopatia hipertensiva (hemorragias em chama de vela, exsudatos algodonosos), oclusão venosa retiniana (hemorragias difusas e tortuosidade venosa), DMRI (drusas e alterações maculares em idosos).</li>
                         <li><strong>Tratamento</strong>: controle glicêmico, pressórico e lipídico rigoroso.</li>
-                        <li><strong>Intervenções</strong>: laser panretiniano (para retinopatia proliferativa), anti-VEGF (para edema macular), vitrectomia (para hemorragia vítrea persistente ou tração).</li>
-                        <li><strong>Prognóstico</strong>: depende do estágio e da resposta ao tratamento; o rastreamento regular é essencial para prevenir a perda visual.</li>
-                        <li><strong>Cuidados</strong>: exame de fundo de olho anual (ou conforme gravidade); orientação sobre sinais de alerta (perda súbita de visão, manchas).</li>
+                        <li><strong>Intervenções</strong>: laser panretiniano (retinopatia proliferativa), anti-VEGF (edema macular), vitrectomia (hemorragia vítrea persistente ou tração).</li>
+                        <li><strong>Prognóstico</strong>: depende do estágio e da resposta ao tratamento; rastreamento regular é essencial.</li>
+                        <li><strong>Cuidados</strong>: exame de fundo de olho anual (ou conforme gravidade); orientar sobre sinais de alerta (perda súbita de visão, manchas).</li>
                     </ul>
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MÓDULO 5 – TERMINOLOGIA ESSENCIAL -->
+    <!-- ========================================== -->
+    <div class="module">
+        <details>
+            <summary class="module-header">
+                <span>Módulo 5 – Terminologia Essencial em Oftalmologia</span>
+                <span class="badge">Glossário</span>
+            </summary>
+            <div class="module-content">
+                <div class="sub-module dark">
+                    <h4>5A – Conceitos Fundamentais</h4>
+                    <ul class="list">
+                        <li><strong>Olho Vermelho é um Sinal</strong>: não uma doença. Exige investigação criteriosa.</li>
+                        <li><strong>Retina não dói</strong>: não possui inervação sensitiva (apenas visual).</li>
+                        <li><strong>Córnea é hiperinervada</strong>: parte mais inervada do corpo por mm².</li>
+                        <li><strong>Encaminhamento no Trauma</strong>: clínico faz o inicial, mas sempre encaminhar ao oftalmo.</li>
+                        <li><strong>Proibição de Anestésicos</strong>: nunca liberar colírio anestésico para o paciente.</li>
+                        <li><strong>Proibição de Corticoide na Ceratite</strong>: contraindicação absoluta sem supervisão do oftalmo.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-module">
+                    <h4>5B – Terminologia Essencial</h4>
+                    <p style="margin-bottom: 10px; color: #2c3e50;">Definições diretas dos principais termos extraídos do material.</p>
+
+                    <h4>Anatomia e Estruturas</h4>
+                    <table class="glossary-table">
+                        <tbody>
+                            <tr><th>Humor vítreo</th><td>Gel transparente, avascular, 2/3 do olho; não se regenera.</td></tr>
+                            <tr><th>Hialoide</th><td>Condensação vítrea que limita o vítreo.</td></tr>
+                            <tr><th>Pars plana</th><td>Porção do corpo ciliar onde o vítreo adere.</td></tr>
+                            <tr><th>Ora serrata</th><td>Limite anterior da retina (1/3 cego).</td></tr>
+                            <tr><th>Papila / Disco Óptico</th><td>Ponto cego fisiológico por onde saem fibras do nervo óptico.</td></tr>
+                            <tr><th>Escavação</th><td>Depressão central na papila.</td></tr>
+                            <tr><th>Mácula</th><td>Área temporal, avascular, responsável pela visão central.</td></tr>
+                            <tr><th>Fóvea</th><td>Assoalho da mácula, parte mais fina, máxima acuidade visual.</td></tr>
+                            <tr><th>Umbo / Fovéola</th><td>Pontos centrais da fóvea.</td></tr>
+                            <tr><th>Membrana de Bruch</th><td>Camada basal que separa a retina da coroide.</td></tr>
+                            <tr><th>EPR</th><td>Epitélio pigmentar da retina (camada 10).</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top:20px;">Sinais e Sintomas</h4>
+                    <table class="glossary-table">
+                        <tbody>
+                            <tr><th>Moscas volantes</th><td>Floaters / miodesopsia – pontos ou fios que se movem no campo visual.</td></tr>
+                            <tr><th>Fotopsia</th><td>Flashes luminosos percebidos sem estímulo externo.</td></tr>
+                            <tr><th>Escotoma</th><td>Perda ou mancha no campo visual.</td></tr>
+                            <tr><th>Metamorfopsia</th><td>Distorção da forma dos objetos (linhas retas parecem tortas).</td></tr>
+                            <tr><th>BAV</th><td>Baixa acuidade visual – redução da nitidez da visão.</td></tr>
+                            <tr><th>Hiperemia perilimbar</th><td>Injeção ciliar – vermelhidão ao redor da córnea.</td></tr>
+                            <tr><th>Hipópio</th><td>Nível de pus na câmara anterior.</td></tr>
+                            <tr><th>Hifema</th><td>Nível de sangue na câmara anterior.</td></tr>
+                            <tr><th>Midríase / Miose</th><td>Dilatação / contração pupilar.</td></tr>
+                            <tr><th>Fotofobia</th><td>Sensibilidade dolorosa à luz.</td></tr>
+                            <tr><th>Proptose / Enoftalmo</th><td>Protusão / afundamento do globo ocular.</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top:20px;">Exames e Procedimentos</h4>
+                    <table class="glossary-table">
+                        <tbody>
+                            <tr><th>Teste de Seidel</th><td>Fluoresceína + luz azul → observação de área de diluição (vazamento de humor aquoso).</td></tr>
+                            <tr><th>Fluoresceína</th><td>Corante tópico que evidencia lesões epiteliais (brilho verde).</td></tr>
+                            <tr><th>Fundo de olho</th><td>Visualização da retina, papila, mácula e vasos.</td></tr>
+                            <tr><th>USG Ocular</th><td>Ultrassonografia empregada quando há opacidade de meios.</td></tr>
+                            <tr><th>Snellen</th><td>Tabela clássica para aferição da acuidade visual.</td></tr>
+                            <tr><th>AREDS-2</th><td>Suplemento vitamínico antioxidante para DMRI seca.</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top:20px;">Condições e Tratamentos</h4>
+                    <table class="glossary-table">
+                        <tbody>
+                            <tr><th>DR Regmatogênico</th><td>Descolamento de retina por rotura retiniana (mais comum).</td></tr>
+                            <tr><th>Scleral buckle</th><td>Cinta de silicone escleral para correção de descolamento de retina.</td></tr>
+                            <tr><th>Vitrectomia</th><td>Cirurgia para remoção do humor vítreo.</td></tr>
+                            <tr><th>Fotocoagulação</th><td>Procedimento a laser para selar roturas ou tratar vasos anormais.</td></tr>
+                            <tr><th>Iridociclite</th><td>Uveíte anterior (inflamação da íris e corpo ciliar).</td></tr>
+                            <tr><th>Hiposfagma</th><td>Sangramento subconjuntival (derrame ocular).</td></tr>
+                            <tr><th>Fotoceratite</th><td>Lesão epitelial da córnea por exposição UV.</td></tr>
+                            <tr><th>LCS</th><td>Abreviatura para Lentes de Contato.</td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </details>
@@ -649,13 +731,24 @@
         <span><strong>DR:</strong> Regmatogênico (mais comum). Trat: Laser, Buckle, Pneumática, Vitrectomia.</span>
         <span><strong>DMRI:</strong> AREDS-2 (seca). Anti-VEGF (úmida).</span>
         <span><strong>Olho Vermelho:</strong> Alertas: ↓visão, dor, reflexo ausente, perilimbar, hipópio, hifema.</span>
-        <span><strong>Trauma:</strong> Seidel + Irrigação (químicos) + Nunca liberar com anestésico.</span>
+        <span><strong>Trauma:</strong> Seidel + Irrigação (químicos) + Nunca liberar anestésico.</span>
         <span><strong>RD:</strong> Rastrear DM; laser panretiniano se proliferativa.</span>
     </div>
 
     <p style="text-align: right; font-size: 0.85rem; color: #6b7f94; margin-top: 25px; border-top: 1px solid #e0e8f0; padding-top: 15px;">
-        Material organizado para estudo &bull; Liga Acadêmica de Oftalmologia &bull; Prof. Jean Fogaça
+        Material organizado para estudo &bull; Liga Acadêmica de Oftalmologia &bull; Prof. Jean Fogaça<br>
+        <span style="font-size: 0.75rem; color: #8a9eb0;">HTML desenvolvido por Fernando Luis G. R.</span>
     </p>
 </div>
+
+<script>
+    // Remove cursor piscante em elementos não editáveis
+    document.addEventListener('mousedown', function(e) {
+        if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+        }
+    });
+</script>
+
 </body>
 </html>
