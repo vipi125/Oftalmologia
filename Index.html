@@ -166,6 +166,25 @@
             grid-template-columns: 1fr 1fr;
             gap: 15px;
         }
+        
+        /* Classe padrão otimizada mantendo a organização compacta */
+        .img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 18px 0;
+        }
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 220px; /* Mantendo o padrão aprovado */
+            border-radius: 6px;
+            border: 1px solid #cbd6e3;
+            box-shadow: 0 2px 8px rgba(40, 70, 110, 0.06);
+        }
+
         @media (max-width: 700px) {
             .container { padding: 15px; }
             .grid-2 { grid-template-columns: 1fr; }
@@ -260,6 +279,10 @@
                         <li><strong>Aderido a</strong>: pars plana (corpo ciliar), retina periférica e papila.</li>
                     </ul>
 
+                    <div class="img-container">
+                        <img src="dbee5151-1b1e-4f96-88a2-39034881679a.jpg" alt="Aderências do Humor Vítreo: Pars plana, Retina periférica e Papila">
+                    </div>
+
                     <h3>Retina – Características Gerais</h3>
                     <ul class="list">
                         <li>Porção <strong>sensorial</strong> do olho (formada principalmente por células neurais).</li>
@@ -276,6 +299,10 @@
                         <li><strong>Nutrição</strong>: artéria/veia central da retina (2/3 anteriores) e coroide/EPR (1/3 posterior – fotorreceptores).</li>
                         <li><strong>Não tem inervação sensitiva</strong> – apenas informação visual.</li>
                     </ul>
+
+                    <div class="img-container">
+                        <img src="fa4a04e6-dece-46d3-aad4-0c14c62122d6.jpg" alt="Fundo de Olho Normal: Mácula, Fóvea e Papila">
+                    </div>
 
                     <h3>As 10 Camadas da Retina</h3>
                     <div class="grid-2">
@@ -298,6 +325,11 @@
                             </ol>
                         </div>
                     </div>
+                    
+                    <div class="img-container">
+                        <img src="4b1c01dd-f40a-4e13-a70a-1cbcfb2e54ee.jpg" alt="Diagrama Histológico das 10 Camadas da Retina">
+                    </div>
+
                     <p style="margin-top:6px;"><strong>Membrana de Bruch</strong>: separa a retina da coroide.</p>
                 </div>
 
@@ -308,6 +340,14 @@
                         <li><strong>Fisiopatologia</strong>: liquefação e contração do humor vítreo.</li>
                         <li><strong>Epidemiologia</strong>: muito comum, especialmente com o envelhecimento.</li>
                         <li><strong>Sinais e Sintomas</strong>: moscas volantes (em pouca quantidade).</li>
+                    </ul>
+
+                    <div class="img-container">
+                        <img src="a00d0e92-bb98-458d-bf9b-67bf07ac12f3.jpg" alt="Simulação de Sintomas (Moscas Volantes e Fotopsia) e Mapeamento de Retina">
+                        <img src="b03a3c0f-f5fa-4f44-b408-48d547117c09.png" alt="Desenvolvimento de Moscas Volantes por Liquefação e Descolamento do Vítreo Posterior">
+                    </div>
+
+                    <ul class="list">
                         <li><strong>Risco</strong>: pode levar ao descolamento de retina por rotura.</li>
                         <li><strong>Diagnóstico</strong>: exame de fundo de olho com oftalmoscopia; USG se opacidade de meios.</li>
                         <li><strong>Diagnóstico Diferencial</strong>: descolamento de retina (que cursa com escotoma e perda visual mais significativa).</li>
@@ -329,6 +369,13 @@
                                 <li><strong>Exsudativo</strong>: menos comum, exsudação ou sangue subrretiniano (disfunção EPR/coroide, tumor, uveíte posterior).</li>
                             </ul>
                         </li>
+                    </ul>
+
+                    <div class="img-container">
+                        <img src="0a9c6d00-544e-4700-b58f-a7e3cccc7386.png" alt="Mecanismos do Descolamento de Retina: Regmatogênico, Tracional e Exsudativo">
+                    </div>
+
+                    <ul class="list">
                         <li><strong>Sintomas</strong>: escotoma (perda de campo visual), moscas volantes (floaters/miodesopsia), flashes (fotopsia).</li>
                         <li><strong>Diagnóstico</strong>: 
                             <ul>
@@ -348,6 +395,10 @@
                             <tr><td>DR grande, complicado ou com mácula off</td><td><strong>Vitrectomia</strong></td></tr>
                         </tbody>
                     </table>
+
+                    <div class="img-container">
+                        <img src="2a7ff358-511d-4dac-bf20-9b82662644b6.png" alt="Esquema da Cirurgia de Vitrectomia">
+                    </div>
                 </div>
 
                 <!-- Sub 1D – DMRI -->
@@ -365,6 +416,14 @@
                                 <li><strong>Exames de imagem</strong>: tomografia de coerência óptica (OCT) para avaliar espessura macular e presença de líquido; angiografia fluoresceínica para identificar neovascularização.</li>
                             </ul>
                         </li>
+                    </ul>
+
+                    <div class="img-container">
+                        <img src="23cf57ea-752a-4d8d-b4d4-8b6ce25ed672 (1).png" alt="OCT de Paciente com DMRI demonstrando Drusas e alterações no EPR">
+                        <img src="a14c512a-e54f-4c10-91e2-4f8f9472edb4.png" alt="Fundoscopia: Lesão Cicatricial / Hemorragia Macular em DMRI Exsudativa">
+                    </div>
+
+                    <ul class="list">
                         <li><strong>Diagnóstico Diferencial</strong>: retinopatia diabética (exsudatos e microaneurismas difusos), oclusão venosa retiniana (hemorragias em chama de vela), degeneração macular miópica (associada a alto grau de miopia).</li>
                     </ul>
                     <h4>Classificação</h4>
@@ -412,9 +471,14 @@
                 <div class="sub-module emergency">
                     <h4>2A – Sinais de Alerta e Fundamentos</h4>
                     <div class="alert-box">
-                        <strong>SINAIS DE ALERTA (qualquer um → encaminhar com urgência):</strong><br>
+                        <strong>SINAIS DE ALERTA (qualquer um &bull; encaminhar com urgência):</strong><br>
                         Redução da visão &bull; Dor intensa &bull; Reflexo pupilar ausente &bull; Hiperemia perilimbar &bull; Hipópio &bull; Hifema
                     </div>
+
+                    <div class="img-container">
+                        <img src="de66feef-ed90-4c47-91ac-553e8d756b44.png" alt="Sinal de Alerta: Hifema (Nível de sangue na câmara anterior)">
+                    </div>
+
                     <ul class="list">
                         <li><strong>Olho vermelho</strong>: não é uma doença, mas um sinal. Causas possíveis: pálpebra/anexos, conjuntiva, córnea, intraocular.</li>
                         <li><strong>Conceitos fundamentais</strong>: A retina não possui inervação sensitiva (lesões retinianas não doem). A córnea é a parte do corpo mais inervada por mm².</li>
@@ -429,10 +493,33 @@
                     <ul class="list">
                         <li><strong>Epidemiologia</strong>: a mais comum. Associada a IVAS, linfonodopatia pré-auricular.</li>
                         <li><strong>Sinais/Sintomas</strong>: edema palpebral, secreção aquosa/mucoide, folículos, membranas (indicam gravidade).</li>
+                    </ul>
+
+                    <div class="img-container">
+                        <img src="ff5e0984-618a-4f1f-aea7-7830d1c03581.png" alt="Conjuntivite Viral/Alérgica: Edema palpebral marcante e olhos vermelhos">
+                        <img src="92ab8f49-45fe-4ce6-b54f-57bc933acb98.png" alt="Conjuntivite Viral: Presença de Folículos Tarsais">
+                    </div>
+
+                    <ul class="list">
                         <li><strong>Duração</strong>: 1 a 4 semanas. Resolução em 7–14 dias.</li>
                         <li><strong>Diagnóstico</strong>: clínico, com exame à lâmpada de fenda; cultura viral raramente necessária.</li>
                         <li><strong>Diagnóstico Diferencial</strong>: conjuntivite bacteriana (secreção purulenta), alérgica (prurido intenso).</li>
                         <li><strong>Tratamento</strong>: higiene, compressa fria, colírios lubrificantes. <strong>Cuidados de contágio</strong>.</li>
+                    </ul>
+
+                    <h4>Conjuntivite Bacteriana</h4>
+                    <ul class="list">
+                        <li>Muita secreção purulenta, sem adenopatia/febre.</li>
+                        <li>Etiologia: <em>S. aureus</em> e <em>S. pneumoniae</em> (adultos); <em>Haemophilus</em> spp. e <em>M. catarrhalis</em> (crianças).</li>
+                    </ul>
+
+                    <div class="img-container">
+                        <img src="cffef8a1-daec-4d63-b09d-50ff9b379488.png" alt="Conjuntivite Bacteriana: Intensa secreção purulenta / mucopurulenta">
+                    </div>
+
+                    <ul class="list">
+                        <li><strong>Diagnóstico</strong>: clínico; cultura e antibiograma em casos graves ou refratários.</li>
+                        <li><strong>Tratamento</strong>: colírio antibiótico (fluoroquinolonas) + lubrificante. Encaminhar se hiperaguda, crônica ou má resposta.</li>
                     </ul>
 
                     <h4>Conjuntivite Alérgica</h4>
@@ -441,49 +528,48 @@
                         <li><strong>Diagnóstico</strong>: clínico, geralmente sazonal ou associado a alérgenos.</li>
                         <li><strong>Tratamento</strong>: colírios lubrificantes e antialérgicos; corticoide (evitar se possível).</li>
                     </ul>
-
-                    <h4>Conjuntivite Bacteriana</h4>
-                    <ul class="list">
-                        <li>Muita secreção purulenta, sem adenopatia/febre.</li>
-                        <li>Etiologia: <em>S. aureus</em> e <em>S. pneumoniae</em> (adultos); <em>Haemophilus</em> spp. e <em>M. catarrhalis</em> (crianças).</li>
-                        <li><strong>Diagnóstico</strong>: clínico; cultura e antibiograma em casos graves ou refratários.</li>
-                        <li><strong>Tratamento</strong>: colírio antibiótico (fluoroquinolonas) + lubrificante. Encaminhar se hiperaguda, crônica ou má resposta.</li>
-                    </ul>
-
-                    <h4>Conjuntivite Neonatal</h4>
-                    <ul class="list"><li>Geralmente por <em>Chlamydia</em> ou <em>Neisseria gonorrhoeae</em>, exige profilaxia e tratamento específico (tópico no material).</li></ul>
                 </div>
 
                 <!-- Sub 2C – Outras Causas -->
                 <div class="sub-module dark">
                     <h4>2C – Outras Causas de Olho Vermelho (Urgência / Emergência)</h4>
                     
-                    <h4>Sangramento Subconjuntival (Hiposfagma)</h4>
-                    <ul class="list">
-                        <li>Benigno. Causas: manobra de Valsalva, trauma/coceira, pico hipertensivo (HAS). Assintomático.</li>
-                        <li><strong>Diagnóstico</strong>: exame físico com oftalmoscopia.</li>
-                        <li>Tratamento: não é necessário.</li>
-                    </ul>
-
                     <h4>Olho Seco</h4>
                     <ul class="list">
                         <li>Geralmente benigno, subdiagnosticado. Hiperemia interpalpebral, turvação visual, prurido.</li>
+                    </ul>
+
+                    <div class="img-container">
+                        <img src="f600bf1c-a76e-4242-af54-b3dbf227f2ec.png" alt="Olho Seco / Hiperemia conjuntival moderada">
+                    </div>
+
+                    <ul class="list">
                         <li><strong>Diagnóstico</strong>: teste de Schirmer, tempo de ruptura do filme lacrimal (TBUT).</li>
                         <li>Tratamento: reduzir uso de eletrônicos, colírios lubrificantes.</li>
                     </ul>
 
-                    <h4>Corpo Estranho</h4>
+                    <h4>Sangramento Subconjuntival (Hiposfagma) e Corpo Estranho</h4>
                     <ul class="list">
-                        <li>Conjuntival, corneano, escleral, intraocular.</li>
-                        <li><strong>Diagnóstico</strong>: exame com lâmpada de fenda; fluoresceína para evidenciar lesões epiteliais.</li>
-                        <li>Curativo: pomada ATB + colírio cicloplégico + olho fechado (máximo 24h).</li>
+                        <li>Benigno. Causas: manobra de Valsalva, trauma/coceira, pico hipertensivo (HAS). Assintomático.</li>
+                        <li><strong>Diagnóstico Corpo Estranho</strong>: exame com lâmpada de fenda; fluoresceína para evidenciar lesões epiteliais. Curativo: pomada ATB + cicloplégico (máximo 24h).</li>
                     </ul>
+
+                    <div class="img-container">
+                        <img src="09b2f0bb-88db-429d-8a75-132c8b101bfa.jpg" alt="Caso clínico de Corpo Estranho e Sangramento Subconjuntival associado a fatores mecânicos">
+                    </div>
 
                     <h4>Ceratite</h4>
                     <ul class="list">
                         <li>Inflamação/infecção corneana (viral ou bacteriana). <strong>Risco de perda visual</strong>. Associada a lentes de contato (LCS).</li>
                         <li><strong>Sinais</strong>: dor + ↓visão, injeção ciliar, fotofobia.</li>
                         <li><strong>Diagnóstico</strong>: lâmpada de fenda com fluoresceína (visualiza lesão epitelial com brilho verde) e luz azul; cultura corneana em casos graves.</li>
+                    </ul>
+
+                    <div class="img-container">
+                        <img src="c8011d2d-f710-484d-a77b-2da441b8bcd9.png" alt="Ceratite Herpética: Úlcera Dendrítica Corada com Fluoresceína sob Luz Azul">
+                    </div>
+
+                    <ul class="list">
                         <li><strong>Diagnóstico Diferencial</strong>: abrasão corneana (sem infiltrado inflamatório), uveíte (sem lesão epitelial).</li>
                         <li><strong style="color:#b03a2e;">Atenção: Contraindicado o uso de colírio corticoesteroide sem oftalmologista.</strong></li>
                         <li><strong>Tratamento</strong>: encaminhar ao oftalmo, colírio ATB.</li>
@@ -493,17 +579,23 @@
                     <ul class="list">
                         <li>Inflamação uveal (íris + corpo ciliar + coroide).</li>
                         <li><strong>Sinais</strong>: dor + ↓visão, unilateral, injeção ciliar, miose, fotofobia, pode ter hipópio, PIO normal ou baixa.</li>
-                        <li><strong>Diagnóstico</strong>: lâmpada de fenda com células e flare na câmara anterior; exames laboratoriais para doenças sistêmicas (HLA-B27, VDRL, FAN, etc.) se necessário.</li>
-                        <li><strong>Doenças sistêmicas associadas</strong>: espondiloartropatias soronegativas (espondilite anquilosante, HLA-B27), artrite idiopática juvenil (assintomática), sarcoidose (granulomatosa), síndrome de Behçet (úlceras + uveíte com hipópio).</li>
-                        <li><strong>Diagnóstico Diferencial</strong>: glaucoma agudo (PIO elevada, midríase), ceratite (lesão corneana).</li>
+                        <li><strong>Diagnóstico</strong>: lâmpada de fenda com células e flare na câmara anterior; exames laboratoriais para doenças sistêmicas se necessário.</li>
                     </ul>
+
+                    <div class="img-container">
+                        <img src="48dfd086-408a-4527-b539-75ee7601d0be.png" alt="Uveíte Anterior Grave: Nível de pus visível na Câmara Anterior (Hipópio)">
+                        <img src="393a437a-4f23-4c57-8d91-01c4180ccdf5.png" alt="Uveíte Anterior: Miose e Sinéquias Posteriores Distorcendo a Pupila">
+                    </div>
 
                     <h4>Glaucoma Agudo</h4>
                     <ul class="list">
                         <li><strong>Emergência!!! Cegueira irreversível.</strong> Dor intensa + ↓visão (horas/dias), ↑PIO (olho duro), midríase média.</li>
                         <li><strong>Diagnóstico</strong>: tonometria (PIO elevada), gonioscopia para avaliar ângulo fechado.</li>
-                        <li><strong>Diagnóstico Diferencial</strong>: uveíte anterior (PIO normal/baixa, miose), ceratite (lesão corneana).</li>
                     </ul>
+
+                    <div class="img-container">
+                        <img src="bee14cc6-70ad-4f06-9bed-d374e6fa9977.png" alt="Crise de Glaucoma Agudo: Edema de Córnea e Midríase Média Paralítica">
+                    </div>
                 </div>
             </div>
         </details>
@@ -531,14 +623,8 @@
                             </ul>
                         </li>
                         <li><strong>Teste de Seidel</strong>: 1. Pingar fluoresceína; 2. Luz azul; 3. Observar área de diluição (vazamento de humor aquoso) → confirma perfuração ocular.</li>
-                        <li><strong>Exames complementares</strong>: 
-                            <ul>
-                                <li><strong>TC</strong>: indicada para corpo estranho intraocular, fratura orbitária, hemorragia retrobulbar. <strong>Evitar se suspeita de ruptura do globo</strong> (risco de extrusão).</li>
-                                <li><strong>USG</strong>: útil para avaliar descolamento de retina, hemorragia vítrea, quando há opacidade de meios. <strong>Evitar se suspeita de ruptura do globo</strong>.</li>
-                                <li><strong>RNM</strong>: em casos específicos (ex.: corpo estranho não metálico).</li>
-                            </ul>
-                        </li>
-                        <li><strong>Regra de ouro</strong>: O manejo inicial pode ser feito pelo clínico, mas <strong>sempre encaminhar</strong> ao oftalmologista (lesões intraoculares podem passar despercebidas).</li>
+                        <li><strong>Exames complementares</strong>: TC indicada para corpo estranho intraocular. <strong>Evitar USG se suspeita de ruptura do globo</strong>.</li>
+                        <li><strong>Regra de ouro</strong>: O manejo inicial pode ser feito pelo clínico, mas <strong>sempre encaminhar</strong> ao oftalmologista.</li>
                         <li><strong>Proibição absoluta</strong>: <strong>NUNCA liberar paciente com colírio anestésico</strong> (uso exclusivo do médico).</li>
                     </ul>
                 </div>
@@ -547,18 +633,31 @@
                     <h4>3B – Lesões Específicas (Urgência)</h4>
                     <ul class="list">
                         <li><strong>Laceração Palpebral</strong>: Superficiais ≤1/4 da extensão → apenas pomada ATB. Cuidado com alinhamento da margem. Mediais → possível lesão da via lacrimal superior → encaminhar.</li>
+                    </ul>
+
+                    <div class="img-container">
+                        <img src="6339ccc4-15a3-491e-985a-f945cac805bb.png" alt="Caso clínico real: Laceração de Pálpebra Superior">
+                    </div>
+
+                    <ul class="list">
                         <li><strong>Abrasão Corneana</strong>: 
                             <ul>
                                 <li><strong>Diagnóstico</strong>: fluoresceína + luz azul (brilho verde intenso).</li>
-                                <li>Recuperação rápida (<24h). Abrasões lineares verticais → suspeitar de CE na conjuntiva tarsal superior (everter). Traumas "sujos" → ATB profilático.</li>
+                                <li>Recuperação rápida (&lt;24h). Abrasões lineares verticais → suspeitar de CE na conjuntiva tarsal superior (everter). Traumas "sujos" → ATB profilático.</li>
                             </ul>
                         </li>
+                    </ul>
+
+                    <div class="img-container">
+                        <img src="d9134406-deaf-48cb-8f28-37d569950c7e.png" alt="Abrasão Corneana: Lesão Epitelial evidenciada por Corante de Fluoresceína">
+                    </div>
+
+                    <ul class="list">
                         <li><strong>Corpo Estranho / Laceração Corneana</strong>: 
                             <ul>
                                 <li>Vegetal (maior risco fúngico). Alto impacto (maior risco intraocular).</li>
                                 <li>Everter pálpebras (após excluir perfuração).</li>
                                 <li>Remoção pelo clínico: cotonete umedecido (conjuntiva) ou agulha 25G/lâmina 15 (córnea) + ATB tópico por 5 dias.</li>
-                                <li><strong>Diagnóstico Diferencial</strong>: perfuração ocular (teste de Seidel positivo, pupila irregular).</li>
                             </ul>
                         </li>
                     </ul>
@@ -571,6 +670,13 @@
                     <ul class="list">
                         <li>Dor intensa, CE, hiperemia, fotofobia (bilateral). Latência: 6–12h. Autolimitada.</li>
                         <li><strong>Diagnóstico</strong>: história de exposição UV; fluoresceína → ceratopatia punctata.</li>
+                    </ul>
+
+                    <div class="img-container">
+                        <img src="4243613e-84cf-4e2e-ada0-bd9198d2a337.png" alt="Fotoceratite: Coloração por Fluoresceína evidenciando Ceratopatia Punctata">
+                    </div>
+
+                    <ul class="list">
                         <li>Tratamento: suporte, compressas frias, óculos escuros, evitar UV.</li>
                     </ul>
 
@@ -579,7 +685,7 @@
                         <li><strong>Álcalis (bases, ex: bomba de cal)</strong>: mais graves (necrose liquefativa, saponificação). <strong>Ácidos</strong>: menos graves (necrose de coagulação, barreira autolimitada).</li>
                         <li><strong>Diagnóstico</strong>: avaliação do pH com fita de urina após lavagem.</li>
                         <li><strong>Passo 1 (MAIS IMPORTANTE)</strong>: Irrigação no local do acidente (água filtrada).</li>
-                        <li><strong>Passo 2</strong>: Chegando ao atendimento, irrigação com soro/Ringer (baixa pressão, alto volume) por ≥30 min.</li>
+                        <li><strong>Passo 2</strong>: Chegando ao atendimento, irrigação com soro/Ringer (baixa pressão, alto volume) por &ge;30 min.</li>
                         <li><strong>Passo 3</strong>: Anestesia tópica (proparacaína/proximetacaína 0,5%) se disponível.</li>
                         <li><strong>Passo 4</strong>: Aferir pH no fundo de saco inferior (fita de urina). Se neutro → parar e reconferir após 30 min. Se alterado → manter por +30 min.</li>
                         <li><strong>Passo 5</strong>: Avaliação oftalmológica emergencial é <strong>mandatória</strong> (exceto casos muito leves).</li>
@@ -617,10 +723,16 @@
                         <li><strong>Diagnóstico</strong>:
                             <ul>
                                 <li><strong>Exame físico</strong>: fundoscopia para visualizar microaneurismas, hemorragias, exsudatos duros, edema macular.</li>
-                                <li><strong>Exames laboratoriais</strong>: glicemia de jejum, HbA1c, perfil lipídico, função renal (microalbuminúria).</li>
                                 <li><strong>Exames de imagem</strong>: angiografia fluoresceínica (para identificar áreas de isquemia e neovascularização); OCT (para quantificar edema macular).</li>
                             </ul>
                         </li>
+                    </ul>
+
+                    <div class="img-container">
+                        <img src="f54d0256-758c-4cfd-8078-c4bacb4d479b.jpg" alt="Fundo de Olho - Retinopatia Diabética: Microaneurismas, Hemorragias e Exsudatos Duros">
+                    </div>
+
+                    <ul class="list">
                         <li><strong>Diagnóstico Diferencial</strong>: retinopatia hipertensiva (hemorragias em chama de vela, exsudatos algodonosos), oclusão venosa retiniana (hemorragias difusas e tortuosidade venosa), DMRI (drusas e alterações maculares em idosos).</li>
                         <li><strong>Tratamento</strong>: controle glicêmico, pressórico e lipídico rigoroso.</li>
                         <li><strong>Intervenções</strong>: laser panretiniano (retinopatia proliferativa), anti-VEGF (edema macular), vitrectomia (hemorragia vítrea persistente ou tração).</li>
